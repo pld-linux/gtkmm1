@@ -85,9 +85,9 @@ Biblioteki statyczne GTK-- i GDK--.
 %patch1 -p1
 
 # AM_ACLOCAL_INCLUDE
-tail +161 aclocal.m4 | head -n 16 > acinclude.m4
+tail -n +161 aclocal.m4 | head -n 16 > acinclude.m4
 # GNOME_CXX_WARNINGS
-tail +3762 aclocal.m4 | head -n 53 >> acinclude.m4
+tail -n +3762 aclocal.m4 | head -n 53 >> acinclude.m4
 
 %build
 CXXFLAGS="%{rpmcflags} -fno-exceptions"
