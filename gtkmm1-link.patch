@@ -1,0 +1,60 @@
+--- gtkmm-1.2.10/gdk--/gdk--/Makefile.am.orig	2000-01-14 20:31:14.000000000 +0100
++++ gtkmm-1.2.10/gdk--/gdk--/Makefile.am	2003-08-09 13:16:50.000000000 +0200
+@@ -9,6 +9,7 @@
+ 	color.cc     drawable.cc  gc.cc        pixmap.cc    visual.cc \
+         image.cc     types.cc     cursor.cc
+ libgdkmm_la_LDFLAGS = -version-info $(LIBGDKMM_SO_VERSION) -release $(GTKMM_RELEASE)
++libgdkmm_la_LIBADD = -lgdk
+ 
+ libgdkmmincludedir = $(includedir)/gdk--
+ libgdkmminclude_HEADERS = \
+--- gtkmm-1.2.10/src/gtk--/Makefile.am.orig	2000-05-14 20:48:20.000000000 +0200
++++ gtkmm-1.2.10/src/gtk--/Makefile.am	2003-08-09 13:20:11.000000000 +0200
+@@ -13,7 +13,7 @@
+ gtkmmhwithdirs = $(GEN_H_FILES:.gen_h=.h)
+ gtkmmla = $(patsubst %.gen_h,%.lo,$(GEN_H_FILES))
+ gtkmmh = $(gtkmmhwithdirs)
+-gtkmmc = wrap.cc $(gtkmmh:.h=.cc) 
++gtkmmc = $(gtkmmh:.h=.cc) 
+ 
+ # Not working with all only... trying all-local :(
+ all-local: Makefile $(DATA) $(LTLIBRARIES)
+@@ -46,10 +46,10 @@
+ 
+ 
+ # This builds the library
+-libgtkmm_la_SOURCES = $(gtkmmc) gtk--.cc proxy.cc base.cc marshal.cc
++libgtkmm_la_SOURCES = wrap.cc gtk--.cc proxy.cc base.cc marshal.cc
+ libgtkmm_la_LDFLAGS = -version-info $(LIBGTKMM_SO_VERSION) -release $(GTKMM_RELEASE) -no-undefined
+ libgtkmm_la_INCLUDES = $(GTK_CFLAGS)
+-libgtkmm_la_LIBADD = $(GTK_LIBS) $(gtkmmla)
++libgtkmm_la_LIBADD = $(gtkmmla) $(top_builddir)/gdk--/gdk--/libgdkmm.la $(GTK_LIBS) $(SIGC_LIBS)
+ #libgtkmm_la_DEPENDENCIES = $(gtkmmla) 
+ lib_LTLIBRARIES = libgtkmm.la
+ 
+--- gtkmm-1.2.10/gdk--config.h.in.orig	2000-05-14 20:48:13.000000000 +0200
++++ gtkmm-1.2.10/gdk--config.h.in	2003-08-09 13:48:03.000000000 +0200
+@@ -35,6 +35,6 @@
+     If there is not, the autoheader sed script will not insert the
+     values these defines are suppoed to have.
+  */
+-#define GTKMM_USING_STD_STRING 
++#undef GTKMM_USING_STD_STRING 
+ 
+ #endif // _GDKMM_CONFIG_H
+--- gtkmm-1.2.10/gtk--config.h.in.orig	2000-05-14 20:48:13.000000000 +0200
++++ gtkmm-1.2.10/gtk--config.h.in	2003-08-09 13:49:15.000000000 +0200
+@@ -43,9 +43,9 @@
+     If there is not, the autoheader sed script will not insert the
+     values these defines are suppoed to have.
+  */
+-#define GTKMM_USING_STD_BIDIRECTIONAL_ITERATOR_TAG  
+-#define GTKMM_USING_STD_FORWARD_ITERATOR_TAG  
+-#define GTKMM_USING_STD_INPUT_ITERATOR_TAG  
+-#define GTKMM_USING_STD_MAP 
++#undef GTKMM_USING_STD_BIDIRECTIONAL_ITERATOR_TAG  
++#undef GTKMM_USING_STD_FORWARD_ITERATOR_TAG  
++#undef GTKMM_USING_STD_INPUT_ITERATOR_TAG  
++#undef GTKMM_USING_STD_MAP 
+ 
+ #endif /* _GTKMM_CONFIG_H */
