@@ -11,6 +11,7 @@ Source0:	http://dl.sourceforge.net/gtkmm/%{src_name}-%{version}.tar.gz
 # Source0-md5:	a3816bef91a2796c3984b12954cc7fc9
 Patch0:		%{name}-link.patch
 Patch1:		%{name}-am18.patch
+Patch2:		%{name}-gcc34.patch
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -84,6 +85,7 @@ Biblioteki statyczne GTK-- i GDK--.
 %setup -q -n %{src_name}-%{version}
 %patch0 -p1
 %patch1 -p1
+%patch2 -p1
 
 # AM_ACLOCAL_INCLUDE
 tail -n +161 aclocal.m4 | head -n 16 > acinclude.m4
