@@ -6,7 +6,7 @@ Version:	1.2.10
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/gtkmm/%{src_name}-%{version}.tar.gz
+Source0:	http://dl.sourceforge.net/gtkmm/%{src_name}-%{version}.tar.gz
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	gtk+1-devel
@@ -17,7 +17,6 @@ BuildRequires:	zlib-devel
 Requires:	cpp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	Gtk--
-
 
 %description
 This package provides a C++ interface for GTK+ (the Gimp ToolKit) GUI
