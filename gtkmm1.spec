@@ -7,6 +7,7 @@ Release:	1
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/gtkmm/%{src_name}-%{version}.tar.gz
+# Source0-md5:	a3816bef91a2796c3984b12954cc7fc9
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	gtk+1-devel
