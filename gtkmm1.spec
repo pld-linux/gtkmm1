@@ -40,7 +40,7 @@ contains also GDK-- library, a C++ interface for GDK (General Drawing
 Kit) library.
 
 %description -l pl
-Pakiet GTK-- udostêpnia interfejs C++ dla GTK+. GTK (Gimp ToolKit)
+Pakiet GTK-- udostêpnia interfejs C++ dla GTK+. GTK+ (Gimp ToolKit)
 jest bibliotek± s³u¿±c± do tworzenia graficznych interfejsów
 u¿ytkownika. Interfejs zawiera wygodny interfejs dla programistów C++
 do tworzenia graficznych interfejsów u¿ytkownika przy u¿yciu
