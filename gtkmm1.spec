@@ -26,6 +26,7 @@ Obsoletes:	Gtk--
 Obsoletes:	gtkmm < 1.3
 
 %define		_noautoreq	'perl(a)'
+%define		_ulibdir	%{_prefix}/lib
 
 %description
 This package provides a C++ interface for GTK+ (the Gimp ToolKit) GUI
@@ -131,11 +132,14 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
+%dir %{_ulibdir}/gtkmm
+%if "%{_ulibdir}" != "%{_libdir}"
 %dir %{_libdir}/gtkmm
+%endif
 %{_libdir}/gtkmm/include
-%dir %{_libdir}/gtkmm/proc
-%{_libdir}/gtkmm/proc/*.m4
-%attr(755,root,root) %{_libdir}/gtkmm/proc/gtkmmproc
+%dir %{_ulibdir}/gtkmm/proc
+%{_ulibdir}/gtkmm/proc/*.m4
+%attr(755,root,root) %{_ulibdir}/gtkmm/proc/gtkmmproc
 %{_includedir}/*
 %{_aclocaldir}/*
 %{_examplesdir}/%{name}
