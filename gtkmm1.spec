@@ -74,13 +74,13 @@ cp -f /usr/share/automake/config.sub scripts/
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/usr/src/examples/%{name}
+install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	m4datadir=%{_aclocaldir}
 
-cp -dpr examples/* $RPM_BUILD_ROOT/usr/src/examples/%{name}
+cp -dpr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -96,20 +96,17 @@ rm -rf $RPM_BUILD_ROOT
 %files devel
 %defattr(644,root,root,755)
 %doc README ChangeLog AUTHORS NEWS
-%doc /usr/src/examples/%{name}
+%attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
-%attr(755,root,root) %{_bindir}/*
-
-%{_includedir}/*
-
 %dir %{_libdir}/gtkmm
 %{_libdir}/gtkmm/include
 %dir %{_libdir}/gtkmm/proc
 %{_libdir}/gtkmm/proc/*.m4
 %attr(755,root,root) %{_libdir}/gtkmm/proc/gtkmmproc
-
+%{_includedir}/*
 %{_aclocaldir}/*
+%{_examplesdir}/%{name}
 
 %files static
 %defattr(644,root,root,755)
