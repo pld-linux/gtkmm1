@@ -10,7 +10,7 @@ Source0:	http://dl.sourceforge.net/gtkmm/%{src_name}-%{version}.tar.gz
 # Source0-md5:	a3816bef91a2796c3984b12954cc7fc9
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	automake
-BuildRequires:	gtk+1-devel
+BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libsigc++1-devel >= 1.0.4
 BuildRequires:	libstdc++-devel
