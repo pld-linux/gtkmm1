@@ -99,7 +99,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc README ChangeLog AUTHORS NEWS
 %doc /usr/src/examples/%{name}
 %attr(755,root,root) %{_libdir}/lib*.so
-%attr(755,root,root) %{_libdir}/lib*.la
+%{_libdir}/lib*.la
 %attr(755,root,root) %{_bindir}/*
 
 %{_includedir}/*
