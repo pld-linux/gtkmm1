@@ -1,11 +1,12 @@
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl):	Wrapper C++ dla GTK
 Name:		gtkmm1
+%define		src_name	gtkmm
 Version:	1.2.10
 Release:	1
 License:	LGPL
 Group:		X11/Libraries
-Source0:	ftp://download.sourceforge.net/pub/sourceforge/gtkmm/%{name}-%{version}.tar.gz
+Source0:	ftp://download.sourceforge.net/pub/sourceforge/gtkmm/%{src_name}-%{version}.tar.gz
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	gtk+1-devel
@@ -62,7 +63,7 @@ GTK-- and GDK-- static libraries.
 Biblioteki statyczne GTK-- i GDK--.
 
 %prep
-%setup -q
+%setup -q -n %{src_name}-%{version}
 
 %build
 CXXFLAGS="%{rpmcflags} -fno-exceptions"
