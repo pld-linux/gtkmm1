@@ -4,17 +4,17 @@ Summary(pl):	Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
 Name:		gtkmm1
 %define		src_name	gtkmm
 Version:	1.2.10
-Release:	2
+Release:	3
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/gtkmm/%{src_name}-%{version}.tar.gz
 # Source0-md5:	a3816bef91a2796c3984b12954cc7fc9
 Patch0:		%{name}-link.patch
+Patch1:		%{name}-am18.patch
 URL:		http://gtkmm.sourceforge.net/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+-devel
-BuildRequires:	imlib-devel
+BuildRequires:	gtk+-devel >= 1.2.7
 BuildRequires:	libsigc++1-devel >= 1.0.4
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.4d-3
@@ -54,8 +54,8 @@ Summary:	GTK-- and GDK-- header files, development documentation
 Summary(pl):	Pliki nag³ówkowe GTK-- i GDK--, dokumentacja dla programistów
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}
-Requires:	gtk+-devel
-Requires:	libsigc++1-devel
+Requires:	gtk+-devel >= 1.2.7
+Requires:	libsigc++1-devel >= 1.0.4
 Obsoletes:	Gtk---devel
 Obsoletes:	gtkmm-devel < 1.3
 
@@ -81,7 +81,8 @@ Biblioteki statyczne GTK-- i GDK--.
 
 %prep
 %setup -q -n %{src_name}-%{version}
-%patch -p1
+%patch0 -p1
+%patch1 -p1
 
 # AM_ACLOCAL_INCLUDE
 tail +161 aclocal.m4 | head -n 16 > acinclude.m4
