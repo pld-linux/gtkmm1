@@ -4,7 +4,7 @@ Summary(pl):	Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
 Name:		gtkmm1
 %define		src_name	gtkmm
 Version:	1.2.10
-Release:	3
+Release:	4
 License:	LGPL
 Group:		X11/Libraries
 Source0:	http://dl.sourceforge.net/gtkmm/%{src_name}-%{version}.tar.gz
