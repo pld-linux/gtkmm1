@@ -1,3 +1,4 @@
+%include	/usr/lib/rpm/macros.perl
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl):	Wrapper C++ dla GTK
 Name:		gtkmm1
@@ -14,10 +15,13 @@ BuildRequires:	gtk+-devel
 BuildRequires:	imlib-devel
 BuildRequires:	libsigc++1-devel >= 1.0.4
 BuildRequires:	libstdc++-devel
+BuildRequires:	rpm-perlprov
 BuildRequires:	zlib-devel
 Requires:	cpp
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	Gtk--
+
+%define		_noautoreq	'perl(a)'
 
 %description
 This package provides a C++ interface for GTK+ (the Gimp ToolKit) GUI
@@ -81,6 +85,9 @@ install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}
 	m4datadir=%{_aclocaldir}
 
 cp -dpr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}
+
+%{__perl} -pi -e 's@#!/usr/bin/env perl@#!/usr/bin/perl@' \
+	$RPM_BUILD_ROOT%{_bindir}/gtkmmconvert
 
 %clean
 rm -rf $RPM_BUILD_ROOT
