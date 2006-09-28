@@ -1,8 +1,8 @@
 %include	/usr/lib/rpm/macros.perl
+%define		src_name	gtkmm
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl):	Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
 Name:		gtkmm1
-%define		src_name	gtkmm
 Version:	1.2.10
 Release:	4
 License:	LGPL
@@ -22,9 +22,9 @@ BuildRequires:	libtool >= 2:1.4d-3
 BuildRequires:	rpm-perlprov
 BuildRequires:	zlib-devel
 Requires:	cpp
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Obsoletes:	Gtk--
 Obsoletes:	gtkmm < 1.3
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		_noautoreq	'perl(a)'
 %define		_ulibdir	%{_prefix}/lib
@@ -55,7 +55,7 @@ znajduje siê tak¿e biblioteka GDK--, bêd±ca interfejsem C++ dla GDK
 Summary:	GTK-- and GDK-- header files, development documentation
 Summary(pl):	Pliki nag³ówkowe GTK-- i GDK--, dokumentacja dla programistów
 Group:		X11/Development/Libraries
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+-devel >= 1.2.7
 Requires:	libsigc++1-devel >= 1.0.4
 Obsoletes:	Gtk---devel
@@ -71,7 +71,7 @@ Pliki nag³ówkowe i dokumentacja dla programistów do biblioteki GTK--.
 Summary:	GTK-- and GDK-- static libraries
 Summary(pl):	Biblioteki statyczne GTK-- i GDK--
 Group:		X11/Development/Libraries
-Requires:	%{name}-devel = %{version}
+Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	Gtk---static
 Obsoletes:	gtkmm-static < 1.3
 
