@@ -1,7 +1,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		src_name	gtkmm
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
-Summary(pl):	Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
+Summary(pl.UTF-8):   Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
 Name:		gtkmm1
 Version:	1.2.10
 Release:	4
@@ -39,21 +39,21 @@ combined to quickly create complex user interfaces. This package
 contains also GDK-- library, a C++ interface for GDK (General Drawing
 Kit) library.
 
-%description -l pl
-Pakiet GTK-- udostêpnia interfejs C++ dla GTK+. GTK+ (Gimp ToolKit)
-jest bibliotek± s³u¿±c± do tworzenia graficznych interfejsów
-u¿ytkownika. Interfejs zawiera wygodny interfejs dla programistów C++
-do tworzenia graficznych interfejsów u¿ytkownika przy u¿yciu
+%description -l pl.UTF-8
+Pakiet GTK-- udostÄ™pnia interfejs C++ dla GTK+. GTK+ (Gimp ToolKit)
+jest bibliotekÄ… sÅ‚uÅ¼Ä…cÄ… do tworzenia graficznych interfejsÃ³w
+uÅ¼ytkownika. Interfejs zawiera wygodny interfejs dla programistÃ³w C++
+do tworzenia graficznych interfejsÃ³w uÅ¼ytkownika przy uÅ¼yciu
 elastycznego, zorientowanego obiektowo szkieletu GTK+. Biblioteka
 zawiera callbacki z bezpiecznymi typami, widgety rozszerzalne poprzez
-dziedziczenie i ponad 110 klas, które mo¿na dowolnie ³±czyæ, aby
-szybko stworzyæ skomplikowane interfejsy u¿ytkownika. W pakiecie
-znajduje siê tak¿e biblioteka GDK--, bêd±ca interfejsem C++ dla GDK
+dziedziczenie i ponad 110 klas, ktÃ³re moÅ¼na dowolnie Å‚Ä…czyÄ‡, aby
+szybko stworzyÄ‡ skomplikowane interfejsy uÅ¼ytkownika. W pakiecie
+znajduje siÄ™ takÅ¼e biblioteka GDK--, bÄ™dÄ…ca interfejsem C++ dla GDK
 (General Drawing Kit).
 
 %package devel
 Summary:	GTK-- and GDK-- header files, development documentation
-Summary(pl):	Pliki nag³ówkowe GTK-- i GDK--, dokumentacja dla programistów
+Summary(pl.UTF-8):   Pliki nagÅ‚Ã³wkowe GTK-- i GDK--, dokumentacja dla programistÃ³w
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+-devel >= 1.2.7
@@ -64,12 +64,12 @@ Obsoletes:	gtkmm-devel < 1.3
 %description devel
 Header files and development documentation for GTK-- library.
 
-%description devel -l pl
-Pliki nag³ówkowe i dokumentacja dla programistów do biblioteki GTK--.
+%description devel -l pl.UTF-8
+Pliki nagÅ‚Ã³wkowe i dokumentacja dla programistÃ³w do biblioteki GTK--.
 
 %package static
 Summary:	GTK-- and GDK-- static libraries
-Summary(pl):	Biblioteki statyczne GTK-- i GDK--
+Summary(pl.UTF-8):   Biblioteki statyczne GTK-- i GDK--
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	Gtk---static
@@ -78,7 +78,7 @@ Obsoletes:	gtkmm-static < 1.3
 %description static
 GTK-- and GDK-- static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne GTK-- i GDK--.
 
 %prep
