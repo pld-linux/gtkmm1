@@ -1,7 +1,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		src_name	gtkmm
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
-Summary(pl.UTF-8):   Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
+Summary(pl.UTF-8):	Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
 Name:		gtkmm1
 Version:	1.2.10
 Release:	4
@@ -53,7 +53,7 @@ znajduje się także biblioteka GDK--, będąca interfejsem C++ dla GDK
 
 %package devel
 Summary:	GTK-- and GDK-- header files, development documentation
-Summary(pl.UTF-8):   Pliki nagłówkowe GTK-- i GDK--, dokumentacja dla programistów
+Summary(pl.UTF-8):	Pliki nagłówkowe GTK-- i GDK--, dokumentacja dla programistów
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 Requires:	gtk+-devel >= 1.2.7
@@ -69,7 +69,7 @@ Pliki nagłówkowe i dokumentacja dla programistów do biblioteki GTK--.
 
 %package static
 Summary:	GTK-- and GDK-- static libraries
-Summary(pl.UTF-8):   Biblioteki statyczne GTK-- i GDK--
+Summary(pl.UTF-8):	Biblioteki statyczne GTK-- i GDK--
 Group:		X11/Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 Obsoletes:	Gtk---static
