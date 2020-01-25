@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.perl
 %define		src_name	gtkmm
 Summary:	A C++ interface for the GTK+ (a GUI library for X)
 Summary(pl.UTF-8):	Interfejs C++ dla GTK+ (biblioteki interfejsu graficznego dla X)
